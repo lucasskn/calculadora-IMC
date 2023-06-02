@@ -5,7 +5,7 @@ Projeto é baseado em uma calculadora de IMC, no qual você coloca sua altura e 
 
 ## 💡Informações
 
-Você pode visualizar o projeto nesse [link](https://spotify-web-new.vercel.app/).
+Você pode visualizar o projeto nesse [link](https://lucasskn.github.io/calculadora-IMC/).
 
 ## 🚀 Tecnologias
 Esse projeto foi desenvolvido apenas para treinar o aprendizado com as tecnologias seguintes:
