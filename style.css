@@ -9,12 +9,18 @@
 }
 
 body { 
+  background-color: #040924;
+}
+
+.container {
   height: 100vh;
   display: grid;
   place-items: center;
-  
+}
+
+body, input, button {
   font-family: 'Roboto', sans-serif;
-  background-color: #040924;
+  font-size: 1.6rem;
 }
 
 h1 {
@@ -23,16 +29,16 @@ h1 {
   color: #0C3440;
 }
 
-main > div {
-  display: grid;
-  background-color: white;
-  border-radius: 0.8rem;
-  place-content: center;
-  width: 42.8rem;
+.card {
   padding: 4.8rem 6.4rem 6.4rem;
+  background-color: white;
+  max-width: 42.8rem;
+  border-radius: 0.8rem;
+  margin-inline: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-main h1 {
+form h1 {
   margin-bottom: 3.2rem;
   line-height: 40px;
 
@@ -42,40 +48,42 @@ main h1 {
 form {
   display: flex;
   flex-direction: column;
+  width: 30rem;
 }
 
 form input {
-  width: 30rem;
+  width: 100%;
   padding: 1.6rem;
 
   color: #212529;
   background-color: #DCE2E9;
-  outline-style: none;
-  border: 1.5px solid #495057;
+  outline: 1px solid #495057;
+  border-style: none;
   border-radius: 8px;
 
   font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
+  margin-top: .8rem;
 }
 
-form input:focus,
-form input:hover {
-  border: 1.5px solid #02799D;
+form input::placeholder {
+  color: rgba(73, 80, 87, 50%)
+}
+
+form input:focus {
+  outline: 2px solid #02799D;
 }
 
 form label {
-  margin-bottom: 8px;
-
   font-weight: 400;
-  font-size: 1.4rem;
   line-height: 1.8rem;
+  margin-bottom: .8rem;
   color: #00453A;
 }
 
-form label:nth-child(3) {
+.input-wrapper + .input-wrapper {
   margin-top: 1.6rem;
-}
+} 
 
 form .btn {
   display: flex;
@@ -89,6 +97,7 @@ form .btn {
   
   border-style: none;
   border-radius: 4px;
+  outline-style: none;
   
   background-color: #02799D;
   color: white;
@@ -112,25 +121,18 @@ form .btn:hover {
 }
 
 .modal {
-  display: flex;
-  height: 100vh;
-  width: 100%;
+  display: grid;
+  inset: 0;
   position: absolute;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
 
   background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modalcontainer {
-  display: flex;
-  width: 36.3rem;
   position: relative;
-  justify-content: center;
-  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
-
-  border-radius: 6px;
-  background-color: white;
 }
 
 .modal h1 {
@@ -138,7 +140,7 @@ form .btn:hover {
   justify-content: center;
 }
 
-.modal .feather {
+.modal .close {
   display: flex;
   position: absolute;
   top: 2.1rem;
@@ -149,10 +151,38 @@ form .btn:hover {
   transform: scale(1);
 }
 
-.modal .feather:hover {
+.modal .close:hover,
+.modal .info:hover {
   cursor: pointer;
   color: rgba(12, 52, 64, 1);
-  transform: rotateZ(90deg);
+  transform: scale(1.1)
+}
+
+.modal .info {
+  display: flex;
+  position: absolute;
+  bottom: 2.1rem;
+  right: 2.1rem;
+
+  transition: all 500ms;
+  color: rgba(12, 52, 64, 0.6);
+  transform: scale(1);
+}
+
+.info-list {
+  display: none;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #495057;
+  list-style: none;
+}
+
+.show {
+  display: flex;
+
 }
 
 .error {
@@ -174,19 +204,15 @@ form .btn:hover {
 .error h1 {
   display: flex;
   align-items: center;
-
   font-size: 1.6rem;
   color: white;
 
   animation: shake infinite 1000ms;
 }
 
-.hide {
-  display: none;
-}
-
 .open {
-  display: flex;
+  visibility: visible;
+  opacity: 100%;
 }
 
 @keyframes animError {

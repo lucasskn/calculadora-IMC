@@ -2,9 +2,10 @@ const btnCheck = document.querySelector(".btn");
 const modalClass = document.querySelector(".modal");
 const getError = document.querySelector(".error");
 const closeIcon = modalClass.querySelector(".feather");
+const infoIcon = modalClass.querySelector(".info");
+const infoList = modalClass.querySelector(".info-list");
 
 function modalScreen() {
-  modalClass.classList.toggle("hide");
   modalClass.classList.toggle("open");
 }
 
@@ -12,6 +13,10 @@ function showError() {
   getError.classList.remove("animation");
   void getError.offsetWidth;
   getError.classList.add("animation");
+}
+
+function showInfo() {
+  infoList.classList.toggle("show");
 }
 
 const getIMC = (event) => {
@@ -39,6 +44,7 @@ const getIMC = (event) => {
 btnCheck.addEventListener("click", getIMC);
 
 closeIcon.addEventListener("click", modalScreen);
+infoIcon.addEventListener("click", showInfo);
 
 document.addEventListener("keydown", (e) => {
   if (e.key == "Escape" && modalClass.classList.contains("open")) {

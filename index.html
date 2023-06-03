@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora IMC</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/feather-icons"></script>
 
@@ -17,25 +17,38 @@
   <div class="error">
     <h1>Digite somente números</h1>
   </div>
-  <main>
-    <div>
-      <h1>Cálculo de IMC</h1>
+  <div class="container">
+    <main class="card">
       <form>
-        <label for="weight">Peso (kg)</label>
-        <input type="text" id="weight" placeholder="60">
-        <label for="height">Altura (cm)</label>
-        <input type="text" id="height" placeholder="170">
+        <h1>Cálculo de IMC</h1>
+        <div class="input-wrapper">
+          <label for="weight">Peso (kg)</label>
+          <input type="text" id="weight" placeholder="60">
+        </div>
+        <div class="input-wrapper">
+          <label for="height">Altura (cm)</label>
+          <input type="text" id="height" placeholder="170">
+        </div>
         <button class="btn">
           Calcular IMC
           <i data-feather="arrow-right"></i>
         </button>
       </form>
-    </div>
-  </main>
-  <div class="modal hide">
-    <div class="modalcontainer">
-      <i data-feather="x"></i>
+    </main>
+  </div>
+  <div class="modal">
+    <div class="modalcontainer card">
+      <i data-feather="x" class="close"></i>
+
       <h1>Seu IMC é de 22</h1>
+      <ul class="info-list">
+        <li>MENOR QUE 18,5	MAGREZA</li>
+        <li>ENTRE 18,5 E 24,9	NORMAL</li>
+        <li>ENTRE 25,0 E 29,9	SOBREPESO</li>
+        <li>ENTRE 30,0 E 39,9	OBESIDADE</li>
+        <li>MAIOR QUE 40,0	OBESIDADE GRAVE</li>
+      </ul>
+      <i data-feather="info" class="info"></i>
     </div>
   </div>
   <script>
