@@ -5,7 +5,7 @@ Resultado será o seu IMC :)
 
 ## 💡Informações
 
-Você pode visualizar o projeto nesse [link](https://lucasskn.github.io/calculadora-IMC/){:target="\_blank"}.
+Você pode visualizar o projeto nesse <a href="https://lucasskn.github.io/calculadora-IMC/" target="_blank">link</a> .
 
 ## 🚀 Tecnologias
 
