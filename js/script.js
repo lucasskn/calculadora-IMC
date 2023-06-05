@@ -11,9 +11,9 @@ form.onsubmit = (event) => {
   const height = inputHeight.value;
   const weight = inputWeight.value;
 
-  const validateNumber = notANumber(weight) || notANumber(height);
+  const inputIsNaN = notANumber(weight) || notANumber(height);
 
-  if (validateNumber) {
+  if (inputIsNaN) {
     showError();
     return;
   }

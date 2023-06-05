@@ -17,7 +17,6 @@ function showInfo() {
   Modal.infoList.classList.toggle("show");
 }
 
-//Fechar modal com ESC - Close modal with ESC
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     Modal.close();
